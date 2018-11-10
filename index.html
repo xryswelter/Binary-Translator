@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Binary Translator</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div class="display">
-        <input type="text" name="original" id="original">
-        <button type="submit" id = "submit">Click to Translate</button>
-        <div id="translation"></div>
+    <div class="container">
+        <div class="header">
+            <h1 class="hero">Binary Translator</h1>
+            <h3 class="instructions"> Enter your message into the input and get the binary equivalent!</h3>
+        </div>
+        <div class="display">
+            <div class="input">
+                <input type="text" name="original" id="original">
+                <button type="submit" id = "submit">Click to Translate</button>
+            </div>
+            <div id="translation"></div>
+        </div>
+
     </div>
 </body>
 <script src="./index.js"></script>

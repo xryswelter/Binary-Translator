@@ -352,7 +352,6 @@ function compare(original) {
   for (let j = 0; j < original.length; j++) {
     // console.log(original[j]);
     for (let i = 0; i < letters.length; i++) {
-      //BROKEN HERE???
       if (original[j] === letters[i].letter) {
         console.log(`J is = ${original[j]} and i = ${letters[i].letter}`);
         console.log(letters[i].letter);
@@ -366,28 +365,35 @@ function compare(original) {
   console.log(translation);
   let trans = document.getElementById("translation");
   console.log(trans)
-  trans.appendChild(translation);
+  //Used join to remove "" from array objects
+  let trans2 = translation.join('')
+  trans.innerHTML=trans2;
 }
 
 function appendToTranslation(oLetter, value) {
   //   Create elements for array append
   console.log(oLetter, value);
   let container = document.createElement("div");
-  let originalLetter = document.createElement("p");
+  let originalLetter = document.createElement("div");
   let span = document.createElement("span");
   //   Add classes to elements for CSS
   container.classList.add("card");
   originalLetter.classList.add("originalLetter");
-  span.classList.add("span");
+  if(value !== " "){
+    span.classList.add("span", "visLetter");
+  } else{
+    span.classList.add("span")
+  }
   //   Added in HTML for elements with text
   span.innerHTML = value;
   console.log(span);
   originalLetter.innerHTML = oLetter;
   console.log(originalLetter);
   //   appending everything together
-  originalLetter.appendChild(span);
   container.appendChild(originalLetter);
+  container.appendChild(span);
   console.log(container);
   // Append to translation array
-  translation.push(container);
+  translation.push(container.outerHTML);
 }
+
