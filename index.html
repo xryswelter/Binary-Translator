@@ -16,14 +16,29 @@
             <h3 class="instructions"> Enter your message into the input and get the binary equivalent!</h3>
         </div>
         <div class="display">
-            <div class="input">
-                <input type="text" name="original" id="original">
-                <button type="submit" id = "submit">Click to Translate</button>
+            <div id="translation">
+                <div class="stateDisplay">
+                    <p class = "stateText">You are Currently Translation from: <span id = "state">English to Binary</span></p>
+                    <div id="buttons">
+                        <button class="btn active" value="etb">English to Binary</button>
+                        <button class="btn" value="bte">Binary to English</button>
+                    </div>
+                </div>
+                <div class="title">Translation Will Appear Here</div>
+                <div class="input">
+                    <input type="text" name="original" id="original">
+                    <button type="submit" id="submit">Click to Translate</button>
+                </div>
+                <div id="tLocation">
+                    <div id="originL"></div>
+                    <div id="trans"></div>
+
+                </div>
             </div>
-            <div id="translation"></div>
         </div>
 
     </div>
 </body>
-<script src="./index.js"></script>
+<script src="./2.0.js"></script>
+
 </html>
