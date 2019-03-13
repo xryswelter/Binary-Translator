@@ -52,11 +52,16 @@ body {
   flex-direction: row;
   display: flex;
   justify-content: space-evenly;
+  /* display: none; */
 }
-#originL #trans{
+#originL #transCol{
   flex:1;
   margin:20px;
   border:1px solid black;
+}
+#transCol{
+  display:flex;
+  flex-direction: column
 }
 
 .input {
@@ -69,7 +74,11 @@ body {
   background-color: rgba(219, 255, 247, 1);
 
 }
-
+#copy{
+  border:none;
+  color:white;
+  width:1px;  
+}
 .title{
   font-weight: bold;
   font-size:20px;
@@ -77,7 +86,6 @@ body {
 }
 button{
   border-radius: 15px;
-
 }
 #buttons{
   margin:20px auto;
@@ -91,7 +99,9 @@ button{
   margin:auto;
   width:200px;
 }
-
+#copyButton{
+  background-image:url('resources/clipboard-image.png')
+}
 .stateText{
   font-size:20px;
   font-weight: bolder

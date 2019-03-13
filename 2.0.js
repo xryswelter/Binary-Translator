@@ -2,6 +2,7 @@
 let origin = [];
 let translation = [];
 let state = 'etb'
+let copy = [];
 
 //Setting State for Translator function
 window.onload = () => {
@@ -29,6 +30,10 @@ window.onload = () => {
 document.getElementById('submit').onclick = function () {
     origin = [];
     translation = [];
+    copy = [];
+    // Allow for obtains to display for translation field
+    let tLocation = document.getElementById('transCol').style.display = 'flex';
+
     // Parse out sentence
     let original = document.getElementById('original').value.split('');
     console.log(original);
@@ -39,6 +44,7 @@ document.getElementById('submit').onclick = function () {
 function compare(original) {
     let originL = document.getElementById('originL');
     let trans = document.getElementById('trans');
+    let input = document.getElementById('copy');
     originL.innerHTML = '';
     trans.innerHTML = '';
     console.log(original);
@@ -56,6 +62,7 @@ function compare(original) {
     console.log(origin, translation)
     originL.innerHTML = origin.join('');
     trans.innerHTML = translation.join('');
+    input.value = copy.join('');
     console.log(originL, trans)
 }
 
@@ -72,6 +79,8 @@ function appendToTranslation(original, binary) {
     origin.push(`${original}<br>`);
     console.log(binary.length);
     binary = (binary.length == 7) ? `0${binary}` : `00${binary}`
+    copy.push(binary)
+    console.log(copy);
     translation.push(`${binary}<br>`);
 }
 
@@ -96,3 +105,16 @@ function revert(original) {
     originL.innerHTML = oText;
     trans.innerHTML = tString
 }
+// function for copy button (obtained reference from w3school.com)
+// document.getElementById('submit').onclick = function () {
+
+// window.onload = () => {
+document.getElementById('copyButton').onclick = function () {
+    console.log('poo')
+    let copyText = document.getElementById('copy');
+    copyText.select();
+    document.execCommand("copy");
+    console.log(copyText)
+}
+
+    // }

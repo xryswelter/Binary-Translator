@@ -18,7 +18,8 @@
         <div class="display">
             <div id="translation">
                 <div class="stateDisplay">
-                    <p class = "stateText">You are Currently Translation from: <span id = "state">English to Binary</span></p>
+                    <p class="stateText">You are Currently Translation from: <span id="state">English to Binary</span>
+                    </p>
                     <div id="buttons">
                         <button class="btn active" value="etb">English to Binary</button>
                         <button class="btn" value="bte">Binary to English</button>
@@ -31,7 +32,11 @@
                 </div>
                 <div id="tLocation">
                     <div id="originL"></div>
-                    <div id="trans"></div>
+                    <div id="transCol" style="display:none">
+                        <div id="trans" ></div>
+                        <input type="text" id="copy" >
+                        <button id="copyButton">Copy</button>
+                    </div>
 
                 </div>
             </div>
