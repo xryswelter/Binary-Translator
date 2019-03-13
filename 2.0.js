@@ -93,8 +93,8 @@ function revert(original) {
 
     tString = '';
     translateArray.map(t => { tString += String.fromCharCode(parseInt(t, 2)) })
-    console.log(tString)
-    console.log(original)
+    console.log('tString = ' + tString)
+    console.log('original letters: ' + original)
     originalArray = original.split(' ');
     let oText = ''
     originalArray.forEach(function (element) { oText += (`${element}<br>`) })
@@ -104,14 +104,22 @@ function revert(original) {
     let trans = document.getElementById('trans');
     originL.innerHTML = oText;
     trans.innerHTML = tString
+    copy.push(tString);
+    console.log(copy);
+    let copyText = document.getElementById('copy');
+    copyText.value = copy[0];
+    copyText.select();
+    document.execCommand("copy");
+    console.log(copyText)
+    
 }
-// function for copy button (obtained reference from w3school.com)
-// document.getElementById('submit').onclick = function () {
 
-// window.onload = () => {
+// function for copy button (obtained reference from w3school.com)
+
 document.getElementById('copyButton').onclick = function () {
     console.log('poo')
     let copyText = document.getElementById('copy');
+    
     copyText.select();
     document.execCommand("copy");
     console.log(copyText)

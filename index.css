@@ -74,11 +74,11 @@ body {
   background-color: rgba(219, 255, 247, 1);
 
 }
-#copy{
+/* #copy{
   border:none;
   color:white;
   width:1px;  
-}
+} */
 .title{
   font-weight: bold;
   font-size:20px;
