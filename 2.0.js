@@ -79,7 +79,7 @@ function appendToTranslation(original, binary) {
     origin.push(`${original}<br>`);
     console.log(binary.length);
     binary = (binary.length == 7) ? `0${binary}` : `00${binary}`
-    copy.push(binary)
+    copy.push(`${binary} `)
     console.log(copy);
     translation.push(`${binary}<br>`);
 }

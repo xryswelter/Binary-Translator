@@ -99,9 +99,7 @@ button{
   margin:auto;
   width:200px;
 }
-#copyButton{
-  background-image:url('resources/clipboard-image.png')
-}
+
 .stateText{
   font-size:20px;
   font-weight: bolder
