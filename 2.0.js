@@ -77,11 +77,29 @@ function appendToTranslation(original, binary) {
 
     //Appending Each element to appropriate object
     origin.push(`${original}<br>`);
-    console.log(binary.length);
-    binary = (binary.length == 7) ? `0${binary}` : `00${binary}`
-    copy.push(`${binary} `)
+    console.log("hello" + binary.length);
+    let editBinary=binary;
+    switch (binary.length) {
+        case binary.length =7:
+                editBinary =`0${binary}`
+            console.log("7")
+            break;
+        case binary.length= 6:
+                editBinary =`00${binary}`
+             console.log("6")
+            break;
+        case binary.length > 7:
+                editBinary= binary
+            console.log("7+")
+            break;
+
+        default:
+            "Not working"
+            break;
+    }
+    copy.push(`${editBinary} `)
     console.log(copy);
-    translation.push(`${binary}<br>`);
+    translation.push(`${editBinary}<br>`);
 }
 
 //* Functions for the Binary to English Translator
@@ -111,7 +129,7 @@ function revert(original) {
     copyText.select();
     document.execCommand("copy");
     console.log(copyText)
-    
+
 }
 
 // function for copy button (obtained reference from w3school.com)
@@ -119,7 +137,7 @@ function revert(original) {
 document.getElementById('copyButton').onclick = function () {
     console.log('poo')
     let copyText = document.getElementById('copy');
-    
+
     copyText.select();
     document.execCommand("copy");
     console.log(copyText)
